@@ -8,8 +8,7 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
 	[ReadOnly]
 	public bool generate = true;
-	[ReadOnly]
-	public int Massiv = 0;
+
 	
 	private Button button;
 	private XOGame gm;
@@ -22,7 +21,7 @@ public class Main : MonoBehaviour
     }
 	
 	public void Starting(){
-		gm.Paint(button);
+		gm.Paint(generate, gameObject.name);
 	}
 
  }
