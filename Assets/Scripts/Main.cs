@@ -21,7 +21,7 @@ public class Main : MonoBehaviour
     }
 	
 	public void Starting(){
-		gm.Paint(generate, gameObject.name);
+		gm.Paint(button, gameObject.name);
 	}
 
  }
