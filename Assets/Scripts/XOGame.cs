@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Convert;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +23,7 @@ public class XOGame : MonoBehaviour
 		
 		for (int i = 0; i < 3; i++){
 					for (int j = 0; j < 3; j++){
-						board[i, j] = 0;
+						board[i, j] = 9;
 					}
 		}
 		cross = true;
@@ -38,10 +38,11 @@ public class XOGame : MonoBehaviour
 		
 	}
 	
-	public void Paint(bool generate_, string j_i){
-		if(generate_){
+	public void Paint(Button button, string j_i){
+		if(button.transform.GetComponent<Main>().generate){
 			string[] words = j_i.Split('_');
-			board[(int)Convert.ToInt32(words[1])][(int)Convert.ToInt(words[0])] = 0;
+			board[Convert.ToInt32(words[1]), Convert.ToInt32(words[0])] = Convert.ToInt32(cross);
+			
 		}
 	}
 }
